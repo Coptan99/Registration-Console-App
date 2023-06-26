@@ -1,0 +1,26 @@
+#+TITLE: Registration console app
+#+AUTHOR: Omar Mohamed (OM)
+
+* TABLE OF CONTENTS :toc:
+- [[#o6u-registeration-app][O6U REGISTERATION APP]]
+- [[#files][FILES]]
+- [[#todos-03][TODOS]]
+- [[#contributors][CONTRIBUTORS]]
+
+* O6U REGISTERATION APP
+O6U is a registration console app using *oop* concepts we studied in 1st level.
+* FILES
+1. *main.cpp*
+   + Main file for the project
+2. *human.h*
+   + Header file for classes of students, teachers
+3. *buildings.h*
+   + Header file for classes of buildings
+* TODOS [0/3]
++ [ ] Add more functions for **human.cpp**
++ [ ] Add Buildings in **buildings.h**
++ [ ] Decrease complexitiy
+* CONTRIBUTORS
++ [[https://github.com/Coptan99][Omar Mohamed]]
++ [[https://github.com/BolaWagdy][Bola Wagdy]]
++ [[https://github.com/Ozzy-ZY][Ziad Mohamed]]
