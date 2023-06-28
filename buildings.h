@@ -9,18 +9,19 @@ protected:
     unique_ptr<string> name;
     unique_ptr<int> numOfLevels;
 public:
-
-
-    building(int id, string name) //constructor
-            : id(make_unique<int>(id)), name(make_unique<string>(name))
+    building(int id, const string& name,int numOfLevels) //constructor
+            : id(make_unique<int>(id)), name(make_unique<string>(name)),numOfLevels(make_unique<int>(numOfLevels))
     {}//constructor body
 
     //setters
     void setId(int id){
         this->id = make_unique<int>(id);
     }
-    void setName(string name){
+    void setName(const string& name){
         this->name = make_unique<string>(name);
+    }
+    void setNumOfLevels(int numOfLevels){
+        this->numOfLevels = make_unique<int>(numOfLevels);
     }
     //getters
     int getId(){
@@ -29,17 +30,20 @@ public:
     string getName(){
         return *name;
     }
-    virtual void printData();
+    int getNumOfLevels(){
+        return *numOfLevels;
+    }
+    virtual void printData() = 0;
     friend class floor;
 };
-class floor{ //friend class floor
+class floor{ //friend class floor to building abstract class
     static int count;
     unique_ptr<int> level;
     unique_ptr<int> squareArea;
     unique_ptr<string> access; //staff only,students,executives only ,etc
 public:
 
-    floor(int level,int squarArea,string access,building targetBuilding)
+    floor(int level,int squarArea,const string& access,building targetBuilding)
             : level((level > *targetBuilding.numOfLevels) ? make_unique<int>(level) : nullptr), squareArea(make_unique<int>(squarArea))
             , access(make_unique<string>(access))
     {
@@ -54,9 +58,22 @@ public:
   }
 };
 class facuiltyBuilding:public building{
+    unique_ptr<int> numOfLabs;
 public:
+    facuiltyBuilding(int id, const string &name, int numOfLevels,int numOfLabs)
+    : building(id, name, numOfLevels),numOfLabs(make_unique<int>(numOfLabs))
+    {}
+    void setNumOfLabs(int numOfLabs){
+        this->numOfLabs = make_unique<int>(numOfLabs);
+    }
+    int getNumOfLabs(){
+        return *numOfLabs;
+    }
     void printData()override{
-
+        cout<<"+++++++++++++++++++++\nName: "<<getName()<<"\n"<<
+        "ID: "<<getId()<<"\n"<<
+        "Number of Levels: "<<getNumOfLevels()<<"\n"<<"+++++++++++++++++++++\n";
     }
 };
 //boom
+
