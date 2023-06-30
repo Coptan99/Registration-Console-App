@@ -4,7 +4,7 @@
 * TABLE OF CONTENTS :toc:
 - [[#o6u-registeration-app][O6U REGISTERATION APP]]
 - [[#files][FILES]]
-- [[#todos-03][TODOS]]
+- [[#todos-13][TODOS]]
 - [[#contributors][CONTRIBUTORS]]
 
 * O6U REGISTERATION APP
@@ -16,9 +16,9 @@ O6U is a registration console app using *oop* concepts we studied in 1st level.
    + Header file for classes of students, teachers
 3. *buildings.h*
    + Header file for classes of buildings
-* TODOS [0/3]
-+ [ ] Add more functions for **human.cpp**
-+ [ ] Add Buildings in **buildings.h**
+* TODOS [1/3]
++ [ ] Add more functions for *human.cpp*
++ [X] Add Buildings in *buildings.h*
 + [ ] Decrease complexitiy
 * CONTRIBUTORS
 + [[https://github.com/Coptan99][Omar Mohamed]]
